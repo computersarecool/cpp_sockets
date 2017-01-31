@@ -1,10 +1,10 @@
 #include "base_socket.h"
 
-// Initialize the s_count (tracking for Windows to call WSASetup)
+// Initialize the count of sockets (tracking for Windows to call WSACleanup)
 int Socket::s_count = 0;
 
 // Socket constructor
-Socket::Socket(SocketType t_SocketType)
+Socket::Socket(SocketType socket_type)
 {
 #ifdef WIN32
   // Initialize the WSDATA if no socket instances exist
@@ -20,7 +20,7 @@ Socket::Socket(SocketType t_SocketType)
 #endif
 
   // Create the actual socket
-  m_socket = socket(AF_INET, static_cast<int>(t_SocketType), 0);
+  m_socket = socket(AF_INET, static_cast<int>(socket_type), 0);
   if (m_socket == INVALID_SOCKET)
   {
     throw std::runtime_error("Could not create socket");
@@ -32,9 +32,9 @@ Socket::Socket(SocketType t_SocketType)
 }
 
 // Socket set port
-void Socket::set_port(int t_port)
+void Socket::set_port(int port)
 {
-  m_addr.sin_port = htons(t_port);
+  m_addr.sin_port = htons(port);
 }
 
 // Socket get port
@@ -44,9 +44,9 @@ int Socket::get_port()
 }
 
 // Socket set address
-int Socket::set_address(const std::string& t_ip_address)
+int Socket::set_address(const std::string& ip_address)
 {
-  return inet_pton(AF_INET, t_ip_address.c_str(), &m_addr.sin_addr);
+  return inet_pton(AF_INET, ip_address.c_str(), &m_addr.sin_addr);
 }
 
 // Socket get address

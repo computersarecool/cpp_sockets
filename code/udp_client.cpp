@@ -1,10 +1,10 @@
 #include "udp_client.h"
 
 // UDP Client Constructor
-UDPClient::UDPClient(SocketType t_SocketType, const std::string& t_ip_address, int t_port) : Socket(t_SocketType)
+UDPClient::UDPClient(SocketType socket_type, const std::string& ip_address, int port) : Socket(socket_type)
 {
-  set_port(t_port);
-  set_address(t_ip_address);
+  set_port(port);
+  set_address(ip_address);
   std::cout << "UDP Client created." << std::endl;
 };
 

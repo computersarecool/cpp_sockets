@@ -9,8 +9,8 @@
   #define socklen_t int
 #else
   #include<sys/socket.h>
-  #include<arpa/inet.h> //inet_addr
-  #include <unistd.h> //close
+  #include<arpa/inet.h> // This contains inet_addr
+  #include <unistd.h> //This contains close
   typedef int SOCKET;
   #define INVALID_SOCKET (SOCKET)(~0)
   #define SOCKET_ERROR (-1)
@@ -20,22 +20,23 @@
 
 class Socket {
 public:
-  enum SocketType {
+  enum class SocketType {
     TYPE_STREAM = SOCK_STREAM,
     TYPE_DGRAM = SOCK_DGRAM,
     TYPE_RAW = SOCK_RAW
   };
-  ~Socket();
 
 protected:
-  Socket(SocketType t_SocketType);
-  SOCKET m_socket;
-  sockaddr_in m_addr;
-  void set_port(int t_port);
-  int get_port();
-  int set_address(const std::string& t_ip_address);
-  std::string get_address();
+    Socket(SocketType socket_type);
+    ~Socket();
+    SOCKET m_socket;
+    sockaddr_in m_addr;
+    void set_port(int port);
+    int get_port();
+    int set_address(const std::string& ip_address);
+    std::string get_address();
 
 private:
   static int s_count;
 };
+    

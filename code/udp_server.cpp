@@ -1,13 +1,11 @@
 #include "udp_server.h"
 
 // UDP Server Constructor
-// TODO: Move socket_bind to its own method
-UDPServer::UDPServer(SocketType t_SocketType, const std::string& t_ip_address, int t_port) : Socket(t_SocketType)
+UDPServer::UDPServer(SocketType socket_type, const std::string& ip_address, int port) : Socket(socket_type)
 {
-  set_port(t_port);
-  set_address(t_ip_address);
+  set_port(port);
+  set_address(ip_address);
   std::cout << "UDP Server created." << std::endl;
-  socket_bind();
 }
 
 // UDP Server bind
@@ -24,25 +22,27 @@ void UDPServer::socket_bind()
 }
 
 // UDP Server listen
-// TODO: Get information from peer
-// TODO: Typecast char buf to unsigned char buf
 void UDPServer::listen()
 {
   while(true)
-  {
-    char buf[512];
-    sockaddr_in client;
-    int slen = sizeof(client);
-    int recv_len = recvfrom(m_socket, buf, sizeof(buf), 0, (sockaddr*)&client, &slen);
-    if (recv_len == SOCKET_ERROR)
     {
-      std::cout << "UDP Bind error." << std::endl;
-#ifdef WIN32
-      std::cout << WSAGetLastError() << std::endl;
-#endif
+        sockaddr_in client;
+        char client_ip[INET_ADDRSTRLEN];
+        int slen = sizeof(client);
+        char message_buffer[512];
+        std::cout << "Waiting for data..." << std::endl;
+    
+        // This is a blocking call
+        int recv_len = recvfrom(m_socket, message_buffer, sizeof(message_buffer), 0, (sockaddr*)&client, &slen);
+        if (recv_len == SOCKET_ERROR)
+        {
+          std::cout << "Receive Data error." << std::endl;
+    #ifdef WIN32
+          std::cout << WSAGetLastError() << std::endl;
+    #endif
+        }
+        std::cout << "Received packet from " << inet_ntop(AF_INET, &client.sin_addr, client_ip, INET_ADDRSTRLEN) << ':' << ntohs(client.sin_port) << std::endl;
+	    std::cout << message_buffer << std::endl;
     }
-    std::cout << "Incoming Data:" << std::endl;
-	std::cout << buf << std::endl;
-  }
 }
 
