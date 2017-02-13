@@ -26,6 +26,8 @@ public:
     TYPE_RAW = SOCK_RAW
   };
 
+  int name_to_host(std::string hostname);
+
 protected:
     Socket(SocketType socket_type);
     ~Socket();
@@ -35,7 +37,7 @@ protected:
     int get_port();
     int set_address(const std::string& ip_address);
     std::string get_address();
-
+	
 private:
   static int s_count;
 };

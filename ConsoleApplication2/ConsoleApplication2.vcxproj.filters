@@ -24,7 +24,7 @@
     <ClInclude Include="..\code\udp_server.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="tcp_server.h">
+    <ClInclude Include="..\code\tcp_client.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -41,7 +41,7 @@
     <ClCompile Include="..\code\udp_server.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="tcp_server.cpp">
+    <ClCompile Include="..\code\tcp_client.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -56,6 +56,26 @@ std::string Socket::get_address()
   return  ip_address;
 }
 
+int Socket::name_to_host(std::string hostname)
+{
+	struct hostent *he;
+	struct in_addr** addr_list;
+	if ((he = gethostbyname(hostname.c_str())) == NULL)
+	{
+		std::cout << "gethostname failed " << WSAGetLastError() << std::endl;
+		return 1;
+	}
+	
+	addr_list = (struct in_addr**) he->h_addr_list;
+
+	for (int i = 0; addr_list[i] != NULL; i++)
+	{
+		std::cout << hostname << " resolved to: " << inet_ntoa(*addr_list[i]) << std::endl;
+	}
+	return 0;
+
+}
+
 // Socket Destructor
 Socket::~Socket()
 {

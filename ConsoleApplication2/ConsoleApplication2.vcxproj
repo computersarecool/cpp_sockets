@@ -143,16 +143,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\code\base_socket.h" />
+    <ClInclude Include="..\code\tcp_client.h" />
     <ClInclude Include="..\code\udp_client.h" />
     <ClInclude Include="..\code\udp_server.h" />
-    <ClInclude Include="tcp_server.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\code\base_socket.cpp" />
     <ClCompile Include="..\code\main.cpp" />
+    <ClCompile Include="..\code\tcp_client.cpp" />
     <ClCompile Include="..\code\udp_client.cpp" />
     <ClCompile Include="..\code\udp_server.cpp" />
-    <ClCompile Include="tcp_server.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

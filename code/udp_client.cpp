@@ -12,5 +12,5 @@ UDPClient::UDPClient(SocketType socket_type, const std::string& ip_address, int 
 // UDP Client Send message
 int UDPClient::send_message(const std::string& message)
 {
-  return sendto(m_socket, message.c_str(), message.length(), 0, (sockaddr*)&m_addr, sizeof(m_addr));
+  return sendto(m_socket, message.c_str(), message.length(), 0, reinterpret_cast<sockaddr*>(&m_addr), sizeof(m_addr));
 };
