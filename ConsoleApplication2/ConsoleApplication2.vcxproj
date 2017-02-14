@@ -144,6 +144,7 @@
   <ItemGroup>
     <ClInclude Include="..\code\base_socket.h" />
     <ClInclude Include="..\code\tcp_client.h" />
+    <ClInclude Include="..\code\tcp_server.h" />
     <ClInclude Include="..\code\udp_client.h" />
     <ClInclude Include="..\code\udp_server.h" />
   </ItemGroup>
@@ -151,6 +152,7 @@
     <ClCompile Include="..\code\base_socket.cpp" />
     <ClCompile Include="..\code\main.cpp" />
     <ClCompile Include="..\code\tcp_client.cpp" />
+    <ClCompile Include="..\code\tcp_server.cpp" />
     <ClCompile Include="..\code\udp_client.cpp" />
     <ClCompile Include="..\code\udp_server.cpp" />
   </ItemGroup>

@@ -4,7 +4,7 @@
 int Socket::s_count = 0;
 
 // Socket constructor
-Socket::Socket(SocketType socket_type)
+Socket::Socket(const SocketType socket_type)
 {
 #ifdef WIN32
   // Initialize the WSDATA if no socket instances exist
@@ -32,7 +32,7 @@ Socket::Socket(SocketType socket_type)
 }
 
 // Socket set port
-void Socket::set_port(int port)
+void Socket::set_port(const int& port)
 {
   m_addr.sin_port = htons(port);
 }
@@ -56,9 +56,10 @@ std::string Socket::get_address()
   return  ip_address;
 }
 
+// Convert a hostname to a ip address
 int Socket::name_to_host(std::string hostname)
 {
-	struct hostent *he;
+	struct hostent* he;
 	struct in_addr** addr_list;
 	if ((he = gethostbyname(hostname.c_str())) == NULL)
 	{

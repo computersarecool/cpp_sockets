@@ -1,15 +1,16 @@
 #include "tcp_client.h"
 
-TCPClient::TCPClient(SocketType socket_type, const std::string& ip_address, int port) : Socket(socket_type)
+TCPClient::TCPClient(const SocketType socket_type, const std::string& ip_address, const  int& port) : Socket(socket_type)
 {
 	set_address(ip_address);
 	set_port(port);
 }
 
+// Make a connection
 int TCPClient::make_connection()
 {
 	std::cout << "Connecting" << std::endl;
-	if (connect(m_socket, (struct sockaddr*) &m_addr, sizeof(m_addr)) < 0)
+	if (connect(m_socket, (struct sockaddr*)& m_addr, sizeof(m_addr)) < 0)
 	{
 		std::cout << "Connection error" << std::endl;
 		return 1;
@@ -18,7 +19,8 @@ int TCPClient::make_connection()
 	return 0;
 }
 
-int TCPClient::send_message(std::string message)
+// Send an actual message
+int TCPClient::send_message(const std::string& message)
 {
 	int recv_size;
 	char server_reply[2000];

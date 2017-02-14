@@ -2,7 +2,7 @@
 #include <string>
 #include <iostream>
 
-#if defined(WIN32)
+#if defined(_WIN32)
   #include<winsock2.h>
   #include <Ws2tcpip.h>
   #pragma comment(lib, "ws2_32.lib")
@@ -29,11 +29,11 @@ public:
   int name_to_host(std::string hostname);
 
 protected:
-    Socket(SocketType socket_type);
+    Socket(const SocketType socket_type);
     ~Socket();
     SOCKET m_socket;
     sockaddr_in m_addr;
-    void set_port(int port);
+    void set_port(const int& port);
     int get_port();
     int set_address(const std::string& ip_address);
     std::string get_address();
