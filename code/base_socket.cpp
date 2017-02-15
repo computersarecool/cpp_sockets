@@ -32,7 +32,7 @@ Socket::Socket(const SocketType socket_type)
 }
 
 // Socket set port
-void Socket::set_port(const int& port)
+void Socket::set_port(int port)
 {
   m_addr.sin_port = htons(port);
 }

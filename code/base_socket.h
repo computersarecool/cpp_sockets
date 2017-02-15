@@ -33,7 +33,7 @@ protected:
     ~Socket();
     SOCKET m_socket;
     sockaddr_in m_addr;
-    void set_port(const int& port);
+    void set_port(int port);
     int get_port();
     int set_address(const std::string& ip_address);
     std::string get_address();

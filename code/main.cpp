@@ -11,11 +11,11 @@ int main()
   //udp_server.socket_bind();
   //udp_server.listen();
   
-  //UDPClient udp;
-  //std::string message;
-  //std::cout << "Please enter your message" << std::endl;
-  //getline(std::cin, message);
-  //udp.send_message(message + "\n");
+  UDPClient udp;
+  std::string message;
+  std::cout << "Please enter your message" << std::endl;
+  getline(std::cin, message);
+  udp.send_message(message + "\n");
 
 	//TCPClient tcp_client(Socket::SocketType::TYPE_STREAM, "98.139.183.24", 80);
 	//tcp_client.make_connection();
@@ -23,8 +23,8 @@ int main()
 	//std::string message = "GET / HTTP/1.1\r\n\r\n";
 	//tcp_client.send_message(message);
 
-	TCPServer tcp_server;
-	tcp_server.socket_bind();
+	//TCPServer tcp_server;
+	//tcp_server.socket_bind();
 
 	return 0;
 }
