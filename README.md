@@ -1,4 +1,6 @@
-This was a very small exploration into sockets. Specifically I was trying to recreate the functionality of the UDP and TCP operators in TouchDesigner in a CLI. I also wanted to explore using classes and inheritance as most all of the tutorials I found explain sockets using exclusively C code. It was the first project a set out to do on my own using C++. Really this is not that big of a deal, most things I have read suggest using a library like Boost because of the tricky and error-prone nature of sockets. Still this was a fun exercise and helped me really understand how the differences between TCP and UDP sockets are coded
+This was a very small exploration into sockets. Specifically I was trying to recreate the functionality of the UDP and TCP operators in TouchDesigner in a CLI. I also wanted to explore using classes and inheritance as most all of the tutorials I found explain sockets using exclusively C code. It was the first project a set out to do on my own using C++. 
+
+Really this is not that big of a deal, most things I have read suggest using a library like Boost because of the tricky and error-prone nature of sockets. Still this was a fun exercise and helped me really understand how the differences between TCP and UDP sockets are coded.
 
 The CLI Allows you to interactively make a:
 UDP or TCP, server or client
