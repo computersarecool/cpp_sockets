@@ -5,7 +5,7 @@ Really this is not that big of a deal, most things I have read suggest using a l
 The CLI Allows you to interactively make a:
 UDP or TCP, server or client
 
-By asking for
+By asking for:
 - Protocol
 - Client or Server
 
