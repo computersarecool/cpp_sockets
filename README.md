@@ -4,15 +4,17 @@ Really this is not that big of a deal, most things I have read suggest using a l
 
 The CLI Allows you to interactively make a:
 UDP or TCP, server or client
+
 By asking for
 - Protocol
 - Client or Server
 
 If client:
-	- Destination IP address (if client)
-	- Destination port (if client)
+- Destination IP address (if client)
+- Destination port (if client)
+
 If server:
-	- Port on which to listen
+- Port on which to listen
 
 The UDP Client sends a message and exist
 The UDP Server prints received messages to the console
