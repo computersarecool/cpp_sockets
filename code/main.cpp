@@ -13,9 +13,6 @@ std::string get_message()
 
 int main()
 {
-	// TODO: Make name_to_host
-	//tcp_client.name_to_host("www.google.com");
-
 	// Pick the protocol
 	std::string protocol;
 	std::cout << "Please pick a protocol. 1 for UDP, 2 for TCP:" << std::endl;

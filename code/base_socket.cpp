@@ -59,27 +59,6 @@ std::string Socket::get_address()
   return std::string (inet_ntoa(m_addr.sin_addr));
 }
 
-// Convert a hostname to a ip address
-bool Socket::name_to_host(std::string hostname)
-{
-	hostent* he;
-	in_addr** addr_list;
-	if ((he = gethostbyname(hostname.c_str())) == NULL)
-	{
-		std::cout << "gethostname failed " << WSAGetLastError() << std::endl;
-		return false;
-	}
-	
-	addr_list = reinterpret_cast<in_addr**>(he->h_addr_list);
-
-	for (int i = 0; addr_list[i] != NULL; i++)
-	{
-		std::cout << hostname << " resolved to: " << inet_ntoa(*addr_list[i]) << std::endl;
-	}
-	return true;
-
-}
-
 // Socket Destructor
 Socket::~Socket()
 {

@@ -36,7 +36,6 @@ protected:
     int get_port();
     int set_address(const std::string& ip_address);
     std::string get_address();
-	bool name_to_host(std::string hostname);
 
 private:
   static int s_count;
