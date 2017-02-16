@@ -1,7 +1,7 @@
 #include "udp_server.h"
 
 // UDP Server Constructor
-UDPServer::UDPServer(const SocketType socket_type, const std::string& ip_address, const int& port) : Socket(socket_type)
+UDPServer::UDPServer(int port, const std::string& ip_address) : Socket(SocketType::TYPE_DGRAM)
 {
   set_port(port);
   set_address(ip_address);
@@ -11,7 +11,7 @@ UDPServer::UDPServer(const SocketType socket_type, const std::string& ip_address
 // UDP Server bind
 void UDPServer::socket_bind()
 {
-  if (bind(m_socket, (struct sockaddr*)&m_addr, sizeof(m_addr)) == SOCKET_ERROR)
+  if (bind(m_socket, reinterpret_cast<sockaddr*>(&m_addr), sizeof(m_addr)) == SOCKET_ERROR)
   {
     std::cout << "UDP Bind error." << std::endl;
 #ifdef WIN32
@@ -31,9 +31,9 @@ void UDPServer::listen()
         int slen = sizeof(client);
         char message_buffer[512];
         std::cout << "Waiting for data..." << std::endl;
-    
+		
         // This is a blocking call
-        int recv_len = recvfrom(m_socket, message_buffer, sizeof(message_buffer), 0, (sockaddr*)&client, &slen);
+        int recv_len = recvfrom(m_socket, message_buffer, sizeof(message_buffer), 0, reinterpret_cast<sockaddr*>(&client), &slen);
         if (recv_len == SOCKET_ERROR)
         {
           std::cout << "Receive Data error." << std::endl;

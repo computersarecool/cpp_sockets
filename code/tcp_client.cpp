@@ -1,6 +1,6 @@
 #include "tcp_client.h"
 
-TCPClient::TCPClient(const SocketType socket_type, const std::string& ip_address, const  int& port) : Socket(socket_type)
+TCPClient::TCPClient(int port, const std::string& ip_address) : Socket(SocketType::TYPE_STREAM)
 {
 	set_address(ip_address);
 	set_port(port);
@@ -10,7 +10,7 @@ TCPClient::TCPClient(const SocketType socket_type, const std::string& ip_address
 int TCPClient::make_connection()
 {
 	std::cout << "Connecting" << std::endl;
-	if (connect(m_socket, (struct sockaddr*)& m_addr, sizeof(m_addr)) < 0)
+	if (connect(m_socket, reinterpret_cast<sockaddr*>(&m_addr), sizeof(m_addr)) < 0)
 	{
 		std::cout << "Connection error" << std::endl;
 		return 1;

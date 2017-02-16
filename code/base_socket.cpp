@@ -16,10 +16,9 @@ Socket::Socket(const SocketType socket_type)
       throw std::runtime_error("Error initializing Winsock " + WSAGetLastError());
     }
   }
-  ++s_count;
 #endif
 
-  // Create the actual socket
+  // Create the socket handle
   m_socket = socket(AF_INET, static_cast<int>(socket_type), 0);
   if (m_socket == INVALID_SOCKET)
   {
@@ -29,6 +28,11 @@ Socket::Socket(const SocketType socket_type)
   std::cout << "Socket created." << std::endl;
 
   m_addr.sin_family = AF_INET;
+
+#ifdef WIN32
+  // Increment the static count of sockets
+  ++s_count;
+#endif
 }
 
 // Socket set port
@@ -52,28 +56,27 @@ int Socket::set_address(const std::string& ip_address)
 // Socket get address
 std::string Socket::get_address()
 {
-  std::string ip_address(inet_ntoa(m_addr.sin_addr));
-  return  ip_address;
+  return std::string (inet_ntoa(m_addr.sin_addr));
 }
 
 // Convert a hostname to a ip address
-int Socket::name_to_host(std::string hostname)
+bool Socket::name_to_host(std::string hostname)
 {
-	struct hostent* he;
-	struct in_addr** addr_list;
+	hostent* he;
+	in_addr** addr_list;
 	if ((he = gethostbyname(hostname.c_str())) == NULL)
 	{
 		std::cout << "gethostname failed " << WSAGetLastError() << std::endl;
-		return 1;
+		return false;
 	}
 	
-	addr_list = (struct in_addr**) he->h_addr_list;
+	addr_list = reinterpret_cast<in_addr**>(he->h_addr_list);
 
 	for (int i = 0; addr_list[i] != NULL; i++)
 	{
 		std::cout << hostname << " resolved to: " << inet_ntoa(*addr_list[i]) << std::endl;
 	}
-	return 0;
+	return true;
 
 }
 

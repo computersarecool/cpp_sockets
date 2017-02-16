@@ -4,6 +4,6 @@
 class TCPServer : public Socket
 {
 public:
-	TCPServer(const SocketType socket_type = SocketType::TYPE_STREAM, const std::string& ip_address = "127.0.0.1", const int& port = 8000);
+	TCPServer(int port, const std::string& ip_address = "0.0.0.0");
 	void socket_bind();
 };

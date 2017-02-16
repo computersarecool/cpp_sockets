@@ -22,11 +22,10 @@ class Socket {
 public:
   enum class SocketType {
     TYPE_STREAM = SOCK_STREAM,
-    TYPE_DGRAM = SOCK_DGRAM,
-    TYPE_RAW = SOCK_RAW
+    TYPE_DGRAM = SOCK_DGRAM
   };
 
-  int name_to_host(std::string hostname);
+  
 
 protected:
     Socket(const SocketType socket_type);
@@ -37,7 +36,8 @@ protected:
     int get_port();
     int set_address(const std::string& ip_address);
     std::string get_address();
-	
+	bool name_to_host(std::string hostname);
+
 private:
   static int s_count;
 };
