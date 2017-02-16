@@ -30,7 +30,7 @@ The TCP server prints a received message, responds "Your mressage has been recei
 
 ## Things to do
 #### Things I am going to do:
-[ ] Make cross platform
+- [ ] Make cross platform
 
 #### Things I am not going to do:
 There is [a lot more to do](http://beej.us/guide/bgnet/output/html/singlepage/bgnet.html) but for the most part I have accomplished what I want to do.
@@ -40,4 +40,4 @@ Things I could have done but am forgoing:
 	- Threading
 	- Use select
 ### License
-[MIT](http://en.wikipedia.org/wiki/Zlib_License) See [LICENSE.md](https://github.com/computersarecool/cpp_sockets/blob/master/LICENSE.txt) for details.
+[MIT](http://en.wikipedia.org/wiki/MIT_License) See [LICENSE.txt](https://github.com/computersarecool/cpp_sockets/blob/master/LICENSE.txt) for details.
