@@ -42,4 +42,5 @@ Things I could have done but am forgoing:
 	- Use select
 	
 ### License
+:copyright: Willy Nolan 2017 
 [MIT](http://en.wikipedia.org/wiki/MIT_License)
