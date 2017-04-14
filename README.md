@@ -28,7 +28,7 @@ The UDP Server prints received messages to the console
 
 The TCP client sends a message, waits for a response and exits
 
-The TCP server prints a received message, responds "Your mressage has been received by client" and exits
+The TCP server prints a received message, responds "Your message has been received by client" and exits
 
 ## Things to do
 #### Things I am going to do:
