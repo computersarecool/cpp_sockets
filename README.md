@@ -6,7 +6,7 @@ This was a very small exploration into sockets. Specifically I was trying to rec
 Really this is not that big of a deal, most things I have read suggest using a library like Boost because of the tricky and error-prone nature of sockets. Still this was a fun exercise and helped me really understand how the differences between TCP and UDP sockets are coded.
 
 ## Usage
-The CLI Allows you to interactively make a:
+The CLI allows you to interactively make a:
 
 UDP or TCP, server or client
 
@@ -14,12 +14,14 @@ By asking for:
 - Protocol
 - Client or Server
 
-If client:
-- Destination IP address (if client)
-- Destination port (if client)
+Then
 
-If server:
-- Port on which to listen
+  If client:
+    - Destination IP address (if client)
+    - Destination port (if client)
+
+  If server:
+     - Port on which to listen
 
 ## Functionality
 The UDP Client sends a message and exist
