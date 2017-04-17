@@ -16,12 +16,12 @@ By asking for:
 
 Then
 
-  If client:
-    - Destination IP address (if client)
-    - Destination port (if client)
+If client:
+- Destination IP address (if client)
+- Destination port (if client)
 
-  If server:
-     - Port on which to listen
+If server:
+- Port on which to listen
 
 ## Functionality
 The UDP Client sends a message and exist
