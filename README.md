@@ -1,5 +1,5 @@
 # CPP Sockets
-*Testing UDP / TCP Sockets using classes in CPP*
+*C++ UDP / TCP Sockets testing using classes*
 
 This was a very small exploration into sockets. Specifically I was trying to recreate the functionality of the UDP and TCP operators in TouchDesigner in a CLI. I also wanted to explore using classes and inheritance as most all of the tutorials I found explain sockets using exclusively C code. It was the first project a set out to do on my own using C++. 
 
