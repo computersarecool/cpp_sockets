@@ -5,7 +5,7 @@ This was a very small exploration into using sockets in CPP. Specifically I was 
 
 I also wanted to explore using classes and inheritance as most all of the tutorials I found explain sockets using exclusively C code.
 
-Really this is not that big of a deal. Most sources I've found suggest using a library like Boost because of the tricky and error-prone nature of programming sockets. 
+Really this is not that big of a deal and sources I've found suggest using a library like Boost because of the tricky and error-prone nature of programming sockets. 
 
 Still this was a fun exercise and helped me really understand how the differences between TCP and UDP sockets are coded.
 
@@ -19,8 +19,6 @@ Server or Client,
 By asking for:
 - Protocol
 - Client or Server
-
-Then
 
 If client:
 - Destination IP address
