@@ -54,4 +54,4 @@ There is [a lot more that could be done](http://beej.us/guide/bgnet/output/html/
 
 :copyright: Willy Nolan 2017
 
-[MIT](http://en.wikipedia.org/wiki/MIT_License)
+[MIT License](http://en.wikipedia.org/wiki/MIT_License)
