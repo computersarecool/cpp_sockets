@@ -14,11 +14,11 @@ The CLI allows you to interactively make a:
 
 UDP or TCP, 
 
-Server or Client,
+server or client,
 
 By asking for:
 - Protocol
-- Client or Server
+- client or server
 
 If client:
 - Destination IP address
@@ -28,9 +28,9 @@ If server:
 - Port on which to listen
 
 ## Functionality
-The UDP Client sends a message and exits
+The UDP client sends a message and exits
 
-The UDP Server prints received messages to the console
+The UDP server prints received messages to the console
 
 The TCP client sends a message, waits for a response and exits
 
