@@ -1,5 +1,5 @@
 # CPP Sockets
-*Testing UDP / TCP Sockets in CPP using OOP*
+*Testing UDP / TCP Sockets in CPP*
 
 This was a very small exploration into using sockets in CPP. Specifically I was trying to createa CLI that mimicked the functionality of the UDP and TCP operators in TouchDesigner. 
 
