@@ -7,7 +7,7 @@ I also wanted to explore using classes and inheritance as most all of the tutori
 
 Really this is not that big of a deal and sources I've found suggest using a library like Boost because of the tricky and error-prone nature of programming sockets. 
 
-Still this was a fun exercise and helped me really understand how the differences between TCP and UDP sockets are coded.
+Still this was a fun exercise and helped me really understand the differences in programming TCP and UDP.
 
 ## Usage
 The CLI allows you to interactively make a:
