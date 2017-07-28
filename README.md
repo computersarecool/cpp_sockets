@@ -17,15 +17,15 @@ UDP or TCP,
 server or client,
 
 By asking for:
-- Protocol
+- protocol
 - client or server
 
 If client:
-- Destination IP address
-- Destination port
+- destination IP address
+- destination port
 
 If server:
-- Port on which to listen
+- port on which to listen
 
 ## Functionality
 The UDP client sends a message and exits
