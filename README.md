@@ -3,7 +3,7 @@
 
 This was a very small exploration into using sockets in CPP. Specifically I was trying to createa CLI that mimicked the functionality of the UDP and TCP operators in TouchDesigner. 
 
-I also wanted to explore using classes and inheritance as most all of the tutorials I found explain sockets using exclusively C code.
+I also wanted to explore using classes and inheritance as most all of the tutorials I found explain sockets using only C code.
 
 Really this is not that big of a deal and sources I've found suggest using a library like Boost because of the tricky and error-prone nature of programming sockets. 
 
