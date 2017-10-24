@@ -1,7 +1,7 @@
-﻿#include "udp_server.h"
-#include "udp_client.h"
-#include "tcp_client.h"
-#include "tcp_server.h"
+﻿#include "project/udp_server.h"
+#include "project/udp_client.h"
+#include "project/tcp_client.h"
+#include "project/tcp_server.h"
 
 std::string get_message()
 {
@@ -44,8 +44,8 @@ int main()
 		// Client
 		if (socket_type == 1) 
 		{
-			UDPClient client(socket_port, destination_ip);
-			client.send_message(get_message());
+                    UDPClient client(socket_port, destination_ip);
+                    client.send_message(get_message());
 		}
 		// Server
 		else if (socket_type == 2) 

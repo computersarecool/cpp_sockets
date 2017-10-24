@@ -1,6 +1,6 @@
+# Project initialization
 cmake_minimum_required(VERSION 2.7.2 FATAL_ERROR)
 
-# Project name
 project("cpp_sockets")
 
 # Define warnings based on compiler
@@ -15,6 +15,9 @@ if (NOT CONFIGURED_ONCE)
     set(CMAKE_CXX_FLAGS "${warnings}"
         CACHE STRING "Flags used by the compiler during all build types." FORCE)
 endif()
+
+# Add include directory
+include_directories(include)
 
 # Add subdirectories
 add_subdirectory(src/project)

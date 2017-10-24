@@ -25,8 +25,6 @@ public:
     TYPE_DGRAM = SOCK_DGRAM
   };
 
-  
-
 protected:
     Socket(const SocketType socket_type);
     ~Socket();
@@ -40,4 +38,3 @@ protected:
 private:
   static int s_count;
 };
-    
