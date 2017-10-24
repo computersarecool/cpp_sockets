@@ -1,22 +1,25 @@
 #pragma once
+
 #include <string>
 #include <iostream>
 
+// For windows
 #if defined(_WIN32)
   #include<winsock2.h>
   #include <Ws2tcpip.h>
   #pragma comment(lib, "ws2_32.lib")
   #define socklen_t int
+
+// For Linux
 #else
   #include<sys/socket.h>
   #include<arpa/inet.h> // This contains inet_addr
   #include <unistd.h> //This contains close
-  typedef int SOCKET;
   #define INVALID_SOCKET (SOCKET)(~0)
   #define SOCKET_ERROR (-1)
   #define closesocket close
+  typedef int SOCKET;
 #endif
-
 
 class Socket {
 public:

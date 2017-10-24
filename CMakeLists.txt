@@ -4,11 +4,11 @@ cmake_minimum_required(VERSION 2.7.2 FATAL_ERROR)
 project("cpp_sockets")
 
 # Define warnings based on compiler
-#if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
-#    set(warnings "-Wall -Wextra -Werror")
-#elseif ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "MSVC")
-#    set(warnings "/W4 /WX /EHsc")
-#endif()
+if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
+    set(warnings "-Wall -Wextra -Werror")
+elseif ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "MSVC")
+    set(warnings "/W4 /WX /EHsc")
+endif()
 
 # Set warnings
 if (NOT CONFIGURED_ONCE)

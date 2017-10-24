@@ -1,9 +1,8 @@
 #include "project/base_socket.h"
 
-// Initialize the count of sockets (tracking for Windows to call WSACleanup)
+// Initialize the count of sockets (track this to call WSACleanup on Windows)
 int Socket::s_count = 0;
 
-// Socket constructor
 Socket::Socket(const SocketType socket_type)
 {
 #ifdef WIN32
@@ -30,36 +29,30 @@ Socket::Socket(const SocketType socket_type)
   m_addr.sin_family = AF_INET;
 
 #ifdef WIN32
-  // Increment the static count of sockets
   ++s_count;
 #endif
 }
 
-// Socket set port
 void Socket::set_port(int port)
 {
   m_addr.sin_port = htons(port);
 }
 
-// Socket get port
 int Socket::get_port()
 {
   return ntohs(m_addr.sin_port);
 }
 
-// Socket set address
 int Socket::set_address(const std::string& ip_address)
 {
   return inet_pton(AF_INET, ip_address.c_str(), &m_addr.sin_addr);
 }
 
-// Socket get address
 std::string Socket::get_address()
 {
   return std::string (inet_ntoa(m_addr.sin_addr));
 }
 
-// Socket Destructor
 Socket::~Socket()
 {
 #ifdef WIN32

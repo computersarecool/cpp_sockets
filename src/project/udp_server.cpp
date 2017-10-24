@@ -28,7 +28,7 @@ void UDPServer::listen()
     {
         sockaddr_in client;
         char client_ip[INET_ADDRSTRLEN];
-        int slen = sizeof(client);
+        socklen_t slen = sizeof(client);
         char message_buffer[512];
         std::cout << "Waiting for data..." << std::endl;
 		
