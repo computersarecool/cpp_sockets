@@ -41,5 +41,5 @@ int TCPClient::send_message(const std::string& message)
 
 void TCPClient::close()
 {
-	closesocket(m_socket);
+//	closesocket(m_socket);
 }
