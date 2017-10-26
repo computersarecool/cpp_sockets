@@ -1,7 +1,7 @@
 #include "project/udp_server.h"
 
 // UDP Server Constructor
-UDPServer::UDPServer(int port, const std::string& ip_address) : Socket(SocketType::TYPE_DGRAM)
+UDPServer::UDPServer(u_short port, const std::string& ip_address) : Socket(SocketType::TYPE_DGRAM)
 {
   set_port(port);
   set_address(ip_address);

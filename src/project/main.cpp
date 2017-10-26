@@ -25,6 +25,7 @@ int main()
 	getline(std::cin, type);
 	int socket_type = atoi(type.c_str());
 
+	// Pick destination IP address
 	std::string destination_ip;
 	if (socket_type == 1)
 	{
@@ -36,7 +37,7 @@ int main()
 	std::string port;
 	std::cout << "Please pick a " << ((socket_type == 1) ? "destination port:" : "port on which to listen:") << std::endl;
 	getline(std::cin, port);
-	int socket_port = atoi(port.c_str());
+	u_short socket_port = static_cast<u_short>(atoi(port.c_str()));
 
 	// UDP Protocol
 	if (socket_protocol == 1) 
@@ -87,7 +88,7 @@ int main()
 		}
 	}
 
-	// Invalid
+	// Invalid protocol choice
 	else
 	{
 		std::cout << "Your protocol choice was invalid" << std::endl;

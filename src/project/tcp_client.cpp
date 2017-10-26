@@ -1,6 +1,6 @@
 #include "project/tcp_client.h"
 
-TCPClient::TCPClient(int port, const std::string& ip_address) : Socket(SocketType::TYPE_STREAM)
+TCPClient::TCPClient(u_short port, const std::string& ip_address) : Socket(SocketType::TYPE_STREAM)
 {
 	set_address(ip_address);
 	set_port(port);
@@ -24,8 +24,8 @@ int TCPClient::send_message(const std::string& message)
 {
 	int recv_size;
 	char server_reply[2000];
-
-	if (send(m_socket, message.c_str(), message.length(), 0) < 0)
+	int length = static_cast<int>(message.length());
+	if (send(m_socket, message.c_str(), length, 0) < 0)
 	{
 		std::cout << "Send failed" << std::endl;
 		return 1;

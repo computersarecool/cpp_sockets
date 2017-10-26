@@ -1,6 +1,6 @@
 #include "project/tcp_server.h"
 
-TCPServer::TCPServer(int port, const std::string& ip_address) : Socket(SocketType::TYPE_STREAM)
+TCPServer::TCPServer(u_short port, const std::string& ip_address) : Socket(SocketType::TYPE_STREAM)
 {
 	set_port(port);
 	set_address(ip_address);
@@ -43,7 +43,8 @@ void TCPServer::socket_bind()
 		std::cout << "Incoming message is:\n" << message_buffer << std::endl;
                 std::cout << "Message length was: " << recv_len << std::endl;
 		std::string message = "Your message has been received client\n";
-		send(new_socket, message.c_str(), message.length(), 0);
+		int message_length = static_cast<int>(message.length());
+		send(new_socket, message.c_str(), message_length, 0);
 	}
 
 	closesocket(m_socket);

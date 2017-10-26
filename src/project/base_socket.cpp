@@ -33,7 +33,7 @@ Socket::Socket(const SocketType socket_type)
 #endif
 }
 
-void Socket::set_port(int port)
+void Socket::set_port(u_short port)
 {
   m_addr.sin_port = htons(port);
 }

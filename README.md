@@ -41,7 +41,8 @@ The TCP server prints a received message, responds `Your message has been receiv
 - [ ] Make cross platform
 
 #### Things I am not going to do:
-There is [a lot more that could be done](http://beej.us/guide/bgnet/output/html/singlepage/bgnet.html) but this is outside of my goals with this repo.
+- Not use the winsock deprecated functions such as `inet_ntoa`
+- There is [a lot more that could be done](http://beej.us/guide/bgnet/output/html/singlepage/bgnet.html) but this is outside of my goals with this repo.
 
 - I would have liked to add:
 	- Multicast support

@@ -5,6 +5,6 @@
 class TCPServer : public Socket
 {
 public:
-	TCPServer(int port, const std::string& ip_address = "0.0.0.0");
+	TCPServer(u_short port, const std::string& ip_address = "0.0.0.0");
 	void socket_bind();
 };

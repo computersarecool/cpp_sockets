@@ -3,14 +3,15 @@
 #include <string>
 #include <iostream>
 
-// For windows
+// Windows
 #if defined(_WIN32)
+  #define _WINSOCK_DEPRECATED_NO_WARNINGS
   #include<winsock2.h>
   #include <Ws2tcpip.h>
   #pragma comment(lib, "ws2_32.lib")
   #define socklen_t int
 
-// For Linux
+// Linux
 #else
   #include<sys/socket.h>
   #include<arpa/inet.h> // This contains inet_addr
@@ -33,7 +34,7 @@ protected:
     ~Socket();
     SOCKET m_socket;
     sockaddr_in m_addr;
-    void set_port(int port);
+    void set_port(u_short port);
     int get_port();
     int set_address(const std::string& ip_address);
     std::string get_address();

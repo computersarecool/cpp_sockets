@@ -1,6 +1,6 @@
 #include "project/udp_client.h"
 
-UDPClient::UDPClient(int port, const std::string& ip_address) : Socket(SocketType::TYPE_DGRAM)
+UDPClient::UDPClient(u_short port, const std::string& ip_address) : Socket(SocketType::TYPE_DGRAM)
 {
   set_address(ip_address);
   set_port(port);
@@ -10,5 +10,6 @@ UDPClient::UDPClient(int port, const std::string& ip_address) : Socket(SocketTyp
 // Send message
 int UDPClient::send_message(const std::string& message)
 {
-  return sendto(m_socket, message.c_str(), message.length(), 0, reinterpret_cast<sockaddr*>(&m_addr), sizeof(m_addr));
+  int message_length = static_cast<int>(message.length());
+  return sendto(m_socket, message.c_str(), message_length, 0, reinterpret_cast<sockaddr*>(&m_addr), sizeof(m_addr));
 };
