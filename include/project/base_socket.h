@@ -5,20 +5,19 @@
 
 // Windows
 #if defined(_WIN32)
-  #define _WINSOCK_DEPRECATED_NO_WARNINGS
+  #define _WINSOCK_DEPRECATED_NO_WARNINGS  
   #include<winsock2.h>
   #include <Ws2tcpip.h>
   #pragma comment(lib, "ws2_32.lib")
-  #define socklen_t int
+  #define socklen_t int 
 
 // Linux
 #else
-  #include<sys/socket.h>
-  #include<arpa/inet.h> // This contains inet_addr
+  #include <sys/socket.h>
+  #include <arpa/inet.h> // This contains inet_addr
   #include <unistd.h> //This contains close
   #define INVALID_SOCKET (SOCKET)(~0)
   #define SOCKET_ERROR (-1)
-  #define closesocket close
   typedef int SOCKET;
 #endif
 

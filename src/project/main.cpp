@@ -3,6 +3,7 @@
 #include "project/tcp_client.h"
 #include "project/tcp_server.h"
 
+// Helper function to get message to send
 std::string get_message()
 {
 	std::string message;

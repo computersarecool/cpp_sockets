@@ -41,5 +41,9 @@ int TCPClient::send_message(const std::string& message)
 
 void TCPClient::close()
 {
-//	closesocket(m_socket);
+#if defined(_WIN32)
+	closesocket(m_socket);
+#else
+	::close(m_socket);
+#endif
 }
