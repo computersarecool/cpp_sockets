@@ -46,6 +46,9 @@ void TCPServer::socket_bind()
 		int message_length = static_cast<int>(message.length());
 		send(new_socket, message.c_str(), message_length, 0);
 	}
-
+#ifdef WIN32
 	closesocket(m_socket);
+#else
+	close(m_socket);
+#endif
 }
