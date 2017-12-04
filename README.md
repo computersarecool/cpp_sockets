@@ -1,13 +1,13 @@
 # CPP Sockets
 *Testing UDP / TCP Sockets in CPP*
 
-This was a very small exploration into using sockets in CPP. Specifically I was trying to createa CLI that mimicked the functionality of the UDP and TCP operators in TouchDesigner. 
+This was a very small exploration into using sockets in C++. Specifically this tries to create a CLI to send and receive basic network messages.
 
-I also wanted to explore using classes and inheritance as most all of the tutorials I found explain sockets using only C code.
+This repo also uses classes and inheritance whereas most socket examples use only C code.
 
-Really this is not that big of a deal and sources I've found suggest using a library like Boost because of the tricky and error-prone nature of programming sockets. 
+Really this is not that big of a deal, most sources suggest using a library like Boost because of the error-prone nature of programming sockets. 
 
-Still this was a fun exercise and helped me really understand the differences in programming TCP and UDP.
+Still it is a fun exercise and helpful to understand the differences in programming TCP and UDP.
 
 ## Usage
 The CLI allows you to interactively make a:
@@ -37,17 +37,7 @@ The TCP client sends a message, waits for a response and exits
 The TCP server prints a received message, responds `Your message has been received by client` and exits
 
 ## Things to do
-#### Things I am going to do:
-- [ ] Make cross platform
-
-#### Things I am not going to do:
-- Not use the winsock deprecated functions such as `inet_ntoa`
-- There is [a lot more that could be done](http://beej.us/guide/bgnet/output/html/singlepage/bgnet.html) but this is outside of my goals with this repo.
-
-- I would have liked to add:
-	- Multicast support
-	- Threading
-	- Use select
+- There is [a lot more that could be done](http://beej.us/guide/bgnet/output/html/singlepage/bgnet.html) but this is outside the scope of this project
 	
 ### License
 
