@@ -1,5 +1,5 @@
 # CPP Sockets
-*Testing UDP / TCP Sockets in CPP*
+*Simple UDP / TCP Sockets in CPP*
 
 This was a very small exploration into using sockets in C++. Specifically this tries to create a CLI to send and receive basic network messages.
 
@@ -35,6 +35,13 @@ The UDP server prints received messages to the console
 The TCP client sends a message, waits for a response and exits
 
 The TCP server prints a received message, responds `Your message has been received by client` and exits
+
+### To build and use:
+This project has been tested on Linux and Windows. It uses CMAKE to build.
+
+- `cd` into the `build` directory and type `cmake -G "${GENERATOR_TYPE}"`.
+
+`${GENERATOR_TYPE}`s that have been tested are `Visual Studio 15 2017 Win64` and `Unix Makefiles`.
 
 ## Things to do
 - There is [a lot more that could be done](http://beej.us/guide/bgnet/output/html/singlepage/bgnet.html) but this is outside the scope of this project
