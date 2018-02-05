@@ -10,6 +10,10 @@ Really this is not that big of a deal, most sources suggest using a library like
 
 Still it is a fun exercise and helpful to understand the differences in programming TCP and UDP.
 
+## Tested on:
+- Linux
+- Windows
+
 ### To build and use:
 This project has been tested on Linux and Windows. It uses CMAKE to build.
 
