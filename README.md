@@ -15,7 +15,7 @@ Still it is a fun exercise and helpful to understand the differences in programm
 - Windows
 
 ## To build and use:
-This project has been tested on Linux and Windows. It uses CMAKE to build.
+This project has been tested on Linux and Windows. It uses CMAKE.
 
 - `cd` into the `build` directory and type `cmake -G "${GENERATOR_TYPE}"`.
 
