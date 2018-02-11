@@ -1,5 +1,5 @@
 # CPP Sockets
-*Simple UDP / TCP Sockets in CPP*
+*Simple UDP / TCP sockets in CPP*
 
 ## What this repo does:
 This is a very small exploration into using sockets in C++. Specifically this tries to create a CLI to send and receive basic network messages.
