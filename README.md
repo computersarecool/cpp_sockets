@@ -16,7 +16,7 @@ Really this library is not that big of a deal and most sources suggest using a l
 - `simple_cpp_sockets.h` is header-only. Just include it in your project.
 
 ## To Use
-`main.cpp` is a functioning example. It creates a CLI that allows you to interactively make a:
+`main.cpp` is a simple functioning example (not all errors are handled gracefully). It creates a CLI that allows you to interactively make a:
 
 UDP or TCP
 
