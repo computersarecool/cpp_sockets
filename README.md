@@ -1,32 +1,26 @@
-# CPP Sockets
-*Simple UDP / TCP sockets in CPP*
+# Simple CPP Sockets
+*A header-only implementation of TCP and UDP sockets in CPP*
 
-## What this repo does:
-This is a very small exploration into using sockets in C++. Specifically this tries to create a CLI to send and receive basic network messages.
+## Description
+This is a very simple header-only library to use network sockets in C++.
 
-This repo also uses classes and inheritance whereas most socket examples use only C code.
+It uses classes, inheritance and other modern C++ features.
 
-Really this is not that big of a deal, most sources suggest using a library like Boost because of the error-prone nature of programming sockets. 
-
-Still it is a fun exercise and helpful to understand the differences in programming TCP and UDP.
+Really this library is not that big of a deal and most sources suggest using a library like Boost because of the error-prone nature of programming sockets. 
 
 ## Tested on:
 - Linux
 - Windows
 
-## To build and use:
-This project has been tested on Linux and Windows. It uses CMAKE.
+## To Build
+- `simple_cpp_sockets.h` is header-only. Just include it in your project.
 
-- `cd` into the `build` directory and type `cmake -G "${GENERATOR_TYPE}"`.
+## To Use
+`main.cpp` is a simple functioning example (not all errors are handled gracefully). It creates a CLI that allows you to interactively make a:
 
-`${GENERATOR_TYPE}`s that have been tested are `Visual Studio 15 2017 Win64` and `Unix Makefiles`.
+UDP or TCP
 
-## Usage
-The CLI allows you to interactively make a:
-
-UDP or TCP, 
-
-server or client,
+server or client
 
 By asking for:
 - protocol
@@ -40,16 +34,11 @@ If server:
 - port on which to listen
 
 ## Functionality
-The UDP client sends a message and exits
+- `simple_cpp_sockets.h` exposes classes for UDP and TCP servers and clients
+- Look at `main.cpp` to how these are constructed
 
-The UDP server prints received messages to the console
-
-The TCP client sends a message, waits for a response and exits
-
-The TCP server prints a received message, responds `Your message has been received by client` and exits
-
-## Things to do
-- There is [a lot more that could be done](http://beej.us/guide/bgnet/output/html/singlepage/bgnet.html) but this is outside the scope of this project
+## Extra Notes
+- There is [a lot more that could be done](http://beej.us/guide/bgnet/output/html/singlepage/bgnet.html) but this is outside the goals of this project
 	
 ### License
 
