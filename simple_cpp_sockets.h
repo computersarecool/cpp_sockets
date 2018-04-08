@@ -16,9 +16,9 @@
   #include<winsock2.h>
   #include <Ws2tcpip.h>
   #pragma comment(lib, "ws2_32.lib")
-  #define socklen_t int
+  typedef SSIZE_T ssize_t;
 
-// Linux
+  // Linux
 #else
 #include <sys/socket.h>
 #include <arpa/inet.h> // This contains inet_addr
@@ -47,9 +47,14 @@ protected:
 private:
 #ifdef WIN32
     // Number of sockets is tracked to call WSACleanup on Windows
-    static int s_count = 0;
+	static int s_count;
 #endif
 };
+
+#ifdef WIN32
+// Number of sockets is tracked to call WSACleanup on Windows
+int Socket::s_count{ 0 };
+#endif
 
 class UDPClient : public Socket
 {
