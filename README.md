@@ -33,6 +33,9 @@ If client:
 If server:
 - port on which to listen
 
+## Project Structure
+- All code is found in `src`
+
 ## Functionality
 - `simple_cpp_sockets.h` exposes classes for UDP and TCP servers and clients
 - Look at `main.cpp` to how these are constructed
