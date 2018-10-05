@@ -8,7 +8,7 @@ It uses classes, inheritance and other modern C++ features.
 
 Really this library is not that big of a deal and most sources suggest using a library like Boost because of the error-prone nature of programming sockets. 
 
-## Tested on:
+## Tested on
 - Linux
 - Windows
 
