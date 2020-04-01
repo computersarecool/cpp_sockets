@@ -4,6 +4,8 @@
 ## Description
 This is a very simple header-only library to use network sockets in C++.
 
+There is also a simple application to demonstrate its functionality.
+
 It uses classes, inheritance and other modern C++ features.
 
 Really this library is not that big of a deal and most sources suggest using a library like Boost because of the error-prone nature of programming sockets. 
@@ -13,10 +15,16 @@ Really this library is not that big of a deal and most sources suggest using a l
 - Windows
 
 ## To Build
-- `simple_cpp_sockets.h` is header-only. Just include it in your project.
+- `simple_cpp_sockets.h` is header-only (just include it in your project).
+- To build and run the test application on linux:
+    - `cd src`
+    - `g++ main.cpp -o main`
+    - `./main`
 
 ## To Use
-`main.cpp` is a simple functioning example (not all errors are handled gracefully). It creates a CLI that allows you to interactively make a:
+`main.cpp` is a simple functioning example (not all errors are handled gracefully). 
+
+It creates a CLI that allows you to interactively make a:
 
 UDP or TCP
 
@@ -34,10 +42,11 @@ If server:
 - port on which to listen
 
 ## Project Structure
-- All code is found in `src`
+- `src/simple_cpp_sockets.h` is the library
+- `src/simple_cpp_sockets.h` is a simple demon application
 
 ## Functionality
-- `simple_cpp_sockets.h` exposes classes for UDP and TCP servers and clients
+- `simple_cpp_sockets.h` contains classes for UDP and TCP servers and clients
 - Look at `main.cpp` to how these are constructed
 
 ## Extra Notes

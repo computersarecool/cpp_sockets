@@ -1,24 +1,15 @@
-// Possible errors:
-// 1 Invalid protocol
-// 2 Invalid socket type
-// 3 Socket bind error
-// 4 Socket accept error
-// 5 Connection error
-// 6 Message send error
-// 7 Receive error
-
 #include <string>
 #include <iostream>
 
 // Windows
 #if defined(_WIN32)
 #define _WINSOCK_DEPRECATED_NO_WARNINGS
-  #include<winsock2.h>
-  #include <Ws2tcpip.h>
-  #pragma comment(lib, "ws2_32.lib")
-  typedef SSIZE_T ssize_t;
+#include<winsock2.h>
+#include <Ws2tcpip.h>
+#pragma comment(lib, "ws2_32.lib")
+typedef SSIZE_T ssize_t;
 
-  // Linux
+// Linux
 #else
 #include <sys/socket.h>
 #include <arpa/inet.h> // This contains inet_addr
@@ -28,7 +19,13 @@
 typedef int SOCKET;
 #endif
 
-// Interfaces
+
+const int socket_bind_err = 3;
+const int socket_accept_err = 4;
+const int connection_err = 5;
+const int message_send_err = 6;
+const int receive_err = 7;
+
 class Socket {
 public:
     enum class SocketType {
@@ -38,23 +35,23 @@ public:
 
 protected:
     explicit Socket(SocketType socket_type);
+
     ~Socket();
+
     SOCKET m_socket;
     sockaddr_in m_addr;
+
     void set_port(u_short port);
-    int set_address(const std::string& ip_address);
+
+    int set_address(const std::string &ip_address);
 
 private:
 #ifdef WIN32
-    // Number of sockets is tracked to call WSACleanup on Windows
-	static int s_count;
+    // Number of sockets is tracked so as to call WSACleanup on Windows
+    static int s_count;
+    int Socket::s_count{ 0 };
 #endif
 };
-
-#ifdef WIN32
-// Number of sockets is tracked to call WSACleanup on Windows
-int Socket::s_count{ 0 };
-#endif
 
 class UDPClient : public Socket
 {
@@ -86,11 +83,10 @@ public:
     int socket_bind();
 };
 
-// Implementations
 Socket::Socket(const SocketType socket_type) : m_socket(), m_addr()
 {
 #ifdef WIN32
-    // Initialize the WSDATA if no socket instances exist
+  // Initialize the WSDATA if no socket instances exist
   if(!s_count)
   {
     WSADATA wsa;
@@ -166,7 +162,7 @@ int UDPServer::socket_bind()
 #ifdef WIN32
         std::cout << WSAGetLastError() << std::endl;
 #endif
-        return 3;
+        return socket_bind_err;
     }
     std::cout << "UDP Socket Bound." << std::endl;
     return 0;
@@ -209,7 +205,7 @@ int TCPClient::make_connection()
     if (connect(m_socket, reinterpret_cast<sockaddr*>(&m_addr), sizeof(m_addr)) < 0)
     {
         std::cout << "Connection error" << std::endl;
-        return 5;
+        return connection_err;
     }
     std::cout << "connected" << std::endl;
     return 0;
@@ -223,7 +219,7 @@ int TCPClient::send_message(const std::string& message)
     if (send(m_socket, message.c_str(), length, 0) < 0)
     {
         std::cout << "Send failed" << std::endl;
-        return 6;
+        return message_send_err;
     }
     else
     {
@@ -233,7 +229,7 @@ int TCPClient::send_message(const std::string& message)
     if (recv(m_socket, server_reply, 2000, 0) == SOCKET_ERROR)
     {
         std::cout << "Receive Failed" << std::endl;
-        return 7;
+        return receive_err;
     }
     else
     {
@@ -258,7 +254,7 @@ int TCPServer::socket_bind()
 #ifdef WIN32
         std::cout << WSAGetLastError() << std::endl;
 #endif
-        return 3;
+        return socket_bind_err;
     }
 
     std::cout << "TCP Socket Bound." << std::endl;
@@ -277,7 +273,7 @@ int TCPServer::socket_bind()
 #ifdef WIN32
         std::cout << WSAGetLastError() << std::endl;
 #endif
-        return 4;
+        return socket_accept_err;
     }
     else
     {
