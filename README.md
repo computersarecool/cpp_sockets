@@ -16,15 +16,21 @@ Really this library is not that big of a deal and most sources suggest using a l
 
 ## To Build
 - `simple_cpp_sockets.h` is header-only (just include it in your project).
-- To build and run the test application on linux:
+- To build and run the test application on Linux:
     - `cd src`
     - `g++ main.cpp -o main`
     - `./main`
 
+- To build and run the test application on Windows, use Visual Studio or install it, open the "Developer Command Prompt" and run:
+    - `cd src`
+    - `cl main.cpp`
+    - Double click on `main.exe`
+
 ## To Use
 `main.cpp` is a simple functioning example (not all errors are handled gracefully). 
 
-It creates a CLI that allows you to interactively make a:
+Run the compiled demo application from the command line.
+It is a CLI that allows you to interactively make a:
 
 UDP or TCP
 
@@ -43,7 +49,7 @@ If server:
 
 ## Project Structure
 - `src/simple_cpp_sockets.h` is the library
-- `src/simple_cpp_sockets.h` is a simple demon application
+- `src/main.cpp` is a simple demo application
 
 ## Functionality
 - `simple_cpp_sockets.h` contains classes for UDP and TCP servers and clients

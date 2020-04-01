@@ -35,23 +35,23 @@ public:
 
 protected:
     explicit Socket(SocketType socket_type);
-
     ~Socket();
-
     SOCKET m_socket;
     sockaddr_in m_addr;
-
     void set_port(u_short port);
-
-    int set_address(const std::string &ip_address);
+    int set_address(const std::string& ip_address);
 
 private:
 #ifdef WIN32
-    // Number of sockets is tracked so as to call WSACleanup on Windows
+    // Number of sockets is tracked to call WSACleanup on Windows
     static int s_count;
-    int Socket::s_count{ 0 };
 #endif
 };
+
+#ifdef WIN32
+// Initialize s_count here on windows
+int Socket::s_count{ 0 };
+#endif
 
 class UDPClient : public Socket
 {
