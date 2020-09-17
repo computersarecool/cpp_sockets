@@ -1,5 +1,5 @@
 # Simple CPP Sockets
-*A header-only implementation of TCP and UDP sockets in CPP*
+*A header-only implementation of TCP and UDP sockets in C++*
 
 ## Description
 This is a very simple header-only library to use network sockets in C++.
@@ -26,7 +26,7 @@ Really this library is not that big of a deal and most sources suggest using a l
     - `cl main.cpp`
     - Double click on `main.exe`
 
-## To Use
+## Functionality
 `main.cpp` is a simple functioning example (not all errors are handled gracefully). 
 
 Run the compiled demo application from the command line.
@@ -47,13 +47,21 @@ If client:
 If server:
 - port on which to listen
 
+
+
+## To Use			
+simple_cpp_sockets.h contains classes for UDP and TCP servers and clients.
+
+An example looks like:
+```
+UDPServer server(socket_port);
+int bind_status = server.socket_bind();
+```
+Look at main.cpp for the complete needed code.
+
 ## Project Structure
 - `src/simple_cpp_sockets.h` is the library
 - `src/main.cpp` is a simple demo application
-
-## Functionality
-- `simple_cpp_sockets.h` contains classes for UDP and TCP servers and clients
-- Look at `main.cpp` to how these are constructed
 
 ## Extra Notes
 - There is [a lot more that could be done](http://beej.us/guide/bgnet/output/html/singlepage/bgnet.html) but this is outside the goals of this project
