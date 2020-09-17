@@ -1,4 +1,4 @@
-# Simple CPP Sockets
+# Simple C++ Sockets
 *A header-only implementation of TCP and UDP sockets in C++*
 
 ## Description
