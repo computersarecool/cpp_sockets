@@ -20,6 +20,7 @@ typedef int SOCKET;
 #endif
 
 
+// Possible errors
 const int socket_bind_err = 3;
 const int socket_accept_err = 4;
 const int connection_err = 5;
@@ -49,7 +50,7 @@ private:
 };
 
 #ifdef WIN32
-// Initialize s_count here on windows
+// Initialize s_count on windows
 int Socket::s_count{ 0 };
 #endif
 
@@ -208,6 +209,7 @@ int TCPClient::make_connection()
         return connection_err;
     }
     std::cout << "connected" << std::endl;
+
     return 0;
 }
 
@@ -292,4 +294,3 @@ int TCPServer::socket_bind()
 #endif
     return 0;
 }
-
