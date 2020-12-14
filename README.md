@@ -21,10 +21,10 @@ Really this library is not that big of a deal and most sources suggest using a l
     - `g++ main.cpp -o main`
     - `./main`
 
-- To build and run the test application on Windows, use Visual Studio or install it, open the "Developer Command Prompt" and run:
+- To build and run the test application on Windows either use Visual Studio directly or open the `Developer Command Prompt` and run:
     - `cd src`
     - `cl main.cpp`
-    - Double click on `main.exe`
+    - `start main.exe`
 
 ## Functionality
 `main.cpp` is a simple functioning example (not all errors are handled gracefully). 
@@ -49,7 +49,7 @@ If server:
 
 
 
-## To Use			
+## To Use
 simple_cpp_sockets.h contains classes for UDP and TCP servers and clients.
 
 An example looks like:
