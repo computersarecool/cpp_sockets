@@ -15,8 +15,9 @@ Really this library is not that big of a deal and most sources suggest using a l
 - Windows
 
 ## To Build
-- `simple_cpp_sockets.h` is header-only (just include it in your project).
-- To build and run the test application on Linux:
+- The library `simple_cpp_sockets.h` is header-only (just include it in your project).
+
+- To build and run the test application on Linux open a terminal and run:
     - `cd src`
     - `g++ main.cpp -o main`
     - `./main`
@@ -29,12 +30,10 @@ Really this library is not that big of a deal and most sources suggest using a l
 ## Functionality
 `main.cpp` is a simple functioning example (not all errors are handled gracefully). 
 
-Run the compiled demo application from the command line.
-It is a CLI that allows you to interactively make a:
+The compiled test application is a CLI that allows you to interactively create a:
 
-UDP or TCP
-
-server or client
+- UDP or TCP
+- server or client
 
 By asking for:
 - protocol
@@ -50,18 +49,18 @@ If server:
 
 
 ## To Use
-simple_cpp_sockets.h contains classes for UDP and TCP servers and clients.
+`simple_cpp_sockets.h` contains classes for UDP and TCP servers and clients.
 
 An example looks like:
 ```
 UDPServer server(socket_port);
 int bind_status = server.socket_bind();
 ```
-Look at main.cpp for the complete needed code.
+Look at `main.cpp` for the a complete example.
 
 ## Project Structure
 - `src/simple_cpp_sockets.h` is the library
-- `src/main.cpp` is a simple demo application
+- `src/main.cpp` is a demo application
 
 ## Extra Notes
 - There is [a lot more that could be done](http://beej.us/guide/bgnet/output/html/singlepage/bgnet.html) but this is outside the goals of this project

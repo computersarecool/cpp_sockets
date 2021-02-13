@@ -20,7 +20,7 @@ typedef int SOCKET;
 #endif
 
 
-// Possible errors
+// These could also be enums
 const int socket_bind_err = 3;
 const int socket_accept_err = 4;
 const int connection_err = 5;
@@ -87,7 +87,7 @@ public:
 Socket::Socket(const SocketType socket_type) : m_socket(), m_addr()
 {
 #ifdef WIN32
-  // Initialize the WSDATA if no socket instances exist
+  // Initialize the WSDATA if no socket instance exists
   if(!s_count)
   {
     WSADATA wsa;
