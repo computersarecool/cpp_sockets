@@ -63,7 +63,7 @@ Look at `main.cpp` for the a complete example.
 - `src/main.cpp` is a demo application
 
 ## Extra Notes
-- There is [a lot more that could be done](http://beej.us/guide/bgnet/output/html/singlepage/bgnet.html) but this is outside the goals of this project
+- There is [a lot more that could be done](https://beej.us/guide/bgnet/) but this is outside the goals of this project
 	
 ### License
 
